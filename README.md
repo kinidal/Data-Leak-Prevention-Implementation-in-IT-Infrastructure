@@ -14,17 +14,29 @@
 
 ## 📘 Overview
 
-This project describes the implementation of a Data Leak Prevention (DLP) framework using **FortiGate Firewall**, **Active Directory**, and **Google Workspace**.
+This project outlines the implementation of Data Leak Prevention (DLP) within a corporate IT infrastructure using FortiGate Firewall, Active Directory, and Google Workspace. The primary objective is to safeguard confidential data and prevent unauthorized transfers from employees' systems to external destinations.
 
-> ⚠️ Objective: Prevent unauthorized sharing of sensitive data from within the network.
+1. Personal or external email logins
+2. Phishing attacks (spear phishing and generic)
+3. Uncontrolled file sharing via Google Drive
+4. Access to peer-to-peer or cloud-based storage websites
+5. VPN usage via browser extensions
+6. Remote desktop or peer-to-peer applications (e.g., torrent apps)
+7. Bluetooth file transfers
+
+This project also supports the organization's compliance with ISO/IEC 27001:2022 and ISO 13485 standards by ensuring data confidentiality and strengthening security posture.
 
 ...
 
 ## 🔥 Firewall-Level Controls (FortiGate)
 
+### ✅ Implementatedd Measures
+- Application & Website Restriction using Application Control and Web Filter
+- Blocking login to non-whitelisted Gmail accounts
+- Enabling SSL Deep Inspection for HTTPS traffic
+
 ### ✅ Implementation Steps:
 1. **Create a Test Policy**
-
 > A test policy is created in the firewall and placed in the top of list to check the outcome.
 > Create new Appfilter
 > Create new webfilter
@@ -33,7 +45,6 @@ This project describes the implementation of a Data Leak Prevention (DLP) framew
 <<Screenshot here>>
 
 2. **Set Application Filter**
-
 > Edit the newly created App Filter
 > Goto Security -> newly created App Filter
 > Select the categories of Remote access, Peer to Peer, Mail webclient, Online storage etc
@@ -43,7 +54,6 @@ This project describes the implementation of a Data Leak Prevention (DLP) framew
 <<Screenshot here>>
 
 3. **Configure Web Filter**
-
 > Edit the newly created Webfilter
 > Goto Securiity -> newly created webfilter
 > Select the categories to block
@@ -53,7 +63,6 @@ This project describes the implementation of a Data Leak Prevention (DLP) framew
 <<Screenshot here>>
 
 4. **Restrict Gmail Logins (non-whitelisted domains)**
-
 > Enable SSL Deep inspection
 > Enable Gmail login protection setting
 > Enter the custom domain in the list
@@ -61,7 +70,6 @@ This project describes the implementation of a Data Leak Prevention (DLP) framew
 <<Screenshot here>>
 
 5. **Apply to test systems and monitor**
-
 <<Screenshot here>>
 
 ### ❗ Challenges Faced:
@@ -89,6 +97,12 @@ This project describes the implementation of a Data Leak Prevention (DLP) framew
 
 ## 🧩 Active Directory Configuration (via GPO)
 
+### ✅ Implementatedd Measures
+- Limit user privileges to prevent unauthorized software installation.
+- Disable Bluetooth file sharing.
+- Restrict browser extension installations.
+- Block mobile hotspot sharing features on laptops.
+
 1. Disable Bluetooth file sharing
 
 > Create a new setting/policy named as DLP
@@ -113,9 +127,15 @@ This project describes the implementation of a Data Leak Prevention (DLP) framew
 
 ## ☁️ Google Workspace DLP Settings
 
-- Enable protection against phishing attacks
-- Allow email communication only with approved domains
-- Restrict Drive file sharing to trusted domains
+1. Enable protection against phishing attacks
+
+> Login to Google Workspace Admin
+> Goto
+
+
+
+2. Allow email communication only with approved domains
+3. Restrict Drive file sharing to trusted domains
 
 ---
 
