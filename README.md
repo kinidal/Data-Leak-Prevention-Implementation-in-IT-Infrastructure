@@ -40,27 +40,33 @@ This project also supports the organization's compliance with ISO/IEC 27001:2022
 > A test policy is created in the firewall and placed in the top of list to check the outcome.
 > Create new Appfilter
 > Create new webfilter
-> Select Proxy mode
+> Editing Webfilter for restricting unknown domain gmail login.
+> Testing
 
-<<Screenshot here>>
 
 2. **Set Application Filter**
 > Edit the newly created App Filter
 > Goto Security -> newly created App Filter
-> Select the categories of Remote access, Peer to Peer, Mail webclient, Online storage etc
-> Set Block for these categories
-> Save and apply
+> In Appfilter we can see all the categories with their defualt inspection mode, Monitoring/Block/Allow 
+> Click Add new Override and change to selected, make sure action is 'block'
+> Search for required apps based on Fortigature Application signature
+> Select the categories of Remote access, Peer to Peer, Email, Storage Backup etc
+> Choose appropriate apps as selected for overriding the above mentioed category wise settings.
+> Set Block for these Apps.
+> Save and apply.
 
-<<Screenshot here>>
+![image](https://github.com/user-attachments/assets/78f7c071-c865-4805-aa2b-925c46aa4b1a)
+
 
 3. **Configure Web Filter**
-> Edit the newly created Webfilter
-> Goto Securiity -> newly created webfilter
-> Select the categories to block
-> Create a custom category so that any custom added WEBsites can be overrided
+> Edit the newly created Webfilter.
+> Goto Securiity -> newly created webfilter.
+> Under the Fortiguard Category Based Filter -> Select the categories to block.
+> Create a custom category so that any custom added WEBsites can be overrided based on client requirements or Company specific.
 > Save and apply
 
-<<Screenshot here>>
+![image](https://github.com/user-attachments/assets/eb4f6539-8faa-4c9e-9867-23242e8e9aba)
+
 
 4. **Restrict Gmail Logins (non-whitelisted domains)**
 > Enable SSL Deep inspection
