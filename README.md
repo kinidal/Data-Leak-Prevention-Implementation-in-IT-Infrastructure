@@ -17,12 +17,12 @@ This project also supports the organization's compliance with ISO/IEC 27001:2022
 
 
 ## 📌 Table of Contents
-- [Overview](#overview)
-- [Firewall-Level Controls (FortiGate)](#firewall-level-controls-fortigate)
+
+- [Firewall-Level Controls (FortiGate)](#-firewall-level-controls-fortigate)
   - [Implementation Steps](#implementation-steps)
   - [Challenges Faced](#challenges-faced)
-- [Active Directory Configuration](#active-directory-configuration)
-- [Google Workspace DLP Settings](#google-workspace-dlp-settings)
+- [Active Directory Configuration (via GPO)](#-active-directory-configuration-via-gpo)
+- [Google Workspace DLP Settings](#-google-workspace-dlp-settings)
 - [Conclusion](#conclusion)
 - [Screenshots](#screenshots)
 
