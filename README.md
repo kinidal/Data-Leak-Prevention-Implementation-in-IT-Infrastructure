@@ -69,52 +69,81 @@ This project also supports the organization's compliance with ISO/IEC 27001:2022
 
 
 4. **Restrict Gmail Logins (non-whitelisted domains)**
-> Enable SSL Deep inspection
-> Enable Gmail login protection setting
-> Enter the custom domain in the list
+> Goto newly created Webfilter.
+> Make sure it is 'Proxy-based' mode.
+> Scroll down to the option Proxy options -> Restrict  Google account usage to specific domains -> Toggle it ON
+> Enter the list of your company domains and any client specific domain.
+> Please note gmail.com is not a valid entry
+> Please note this  setting requires 'SSL Deep inspection' profile  otherwise may not work as expected.
+> Go to the newly created firewall policy (where this new webfilter is attached).
+> Enable SSL Deep inspection profile
+> You are likely to receive a warning regarding SSL inspection is turned ON and that can put up some unexpected challenges.
 
-<<Screenshot here>>
+![image](https://github.com/user-attachments/assets/3ab5caed-0798-4757-a1d7-99d0149e93ae)
+
+![image](https://github.com/user-attachments/assets/c2c7a883-42e6-40c0-ba6c-c70ea94d938c)
+
 
 5. **Apply to test systems and monitor**
-<<Screenshot here>>
+
 
 ### ❗ Challenges Faced:
+
 -- Managing **exceptions** for trusted domains/sites
 
+**Sometime** there are some scenarios are expected like even valid domains are found as restricted domains via firewall due to the fact that they may be newly created domains or these domains are categorized are potentially dangerous categories as per fortigate signatures (or admins set up like that). For overriding this we can create webfilter overrides and 
 > Goto Webfilter override
-> Add the custom URL to the override and give the newly created custom profile
+> Create new override, paste the domain or URL and select the appropriate  type wildcard/URL etc
+> Select the overriding Categorie as custom category (which you need to create in Locat Categories, and mark that as allowed in the specific webfilter) or any allowed categories already in the webfilter category list of the FOrtiguard category based filter.
 
-<<Screenshot here>>
+<<Screenshot -1 of creating a Webfilter override need to be here>>
 
-> Check the site is applicable
+![image](https://github.com/user-attachments/assets/bed787c7-551f-476d-b427-2aef7368cf91)
+
+
+
+> Check the site if the change is performing as expected.
 
 -- Need for **SSL inspection certificate** installation across endpoints
 
-> Download the Firewall certificate
-> Goto Active directory, create a new Setting and attach to a new GPO 'Firewall certificate installation'
+When the SSL Deep inspection is enabled in a Firewall policy it is more likely that the sites or any URL based connections will undergo strict checking for SSL certificates availability and validity. We may also encounter error from even valid sites because the first certificate validation (symmetric encryption) is happen in from the firewall and the end user system. 
 
-<<Screenshot here>>
+For this to successfully validate we need to install the certificate of the firewall into every systems that connected and accessing via it. For this here i am using Active directory. 
 
-> For Mac Systems, Download the certificate install it to system -> Go to Key editor, make the certificate as trusted always
+> Download the Firewall certificate.
+> Goto Active directory, create a new GPO 'Firewall certificate installation' and attach to the desired Organization Unit.
+> Edit GPO ->  Goto
 
-<<Screenshot here>>
+<<Screenshot of certificate adding to trusted root is here>>
+
+> For Mac Systems, Download the certificate install (make sure it is into system) -> Go to Keychain editor, make the certificate as trusted always.
+
+<<Screenshot certificate installation of trusted root systems is here>>
 
 ---
 
 ## 🧩 Active Directory Configuration (via GPO)
 
 ### ✅ Implementatedd Measures
-- Limit user privileges to prevent unauthorized software installation.
+
 - Disable Bluetooth file sharing.
 - Restrict browser extension installations.
 - Block mobile hotspot sharing features on laptops.
 
-1. Disable Bluetooth file sharing
+1. Disable **Bluetooth file sharing**
 
-> Create a new setting/policy named as DLP
-> Goto 
+> The Aim is to prevent users from sending and receiving files over bluetooth connection from the Organization owned systems. On the other side users should be able to use Bluetooth connected Headphones and other devices.
+> Create a new GPO with a given name and attach to  a desired OU.
+> Edit the GPO -> Goto Comouter Configuration -> Preferences -> Windows settings -> Registry -> DisableFsquirt -> Set the value 0x1 -> Save
+> Edit the GPO -> Computer Configuration -> Administrative templates -> System/Device Installation/ Device Installation Restrictions -> Prevent Installation of devices that match any of these Device ID's -> BTH\MF_RFCOMM
+> Save and apply
+> Apply force sync of Group policy to all systems, also try restart of the endpoint of systems
+> Or run the following command in a command prompt window: fsquirt.exe -UnRegister
 
-<<Screenshot here>>
+![image](https://github.com/user-attachments/assets/d359a993-f00b-4944-a8d6-1e0de3267ecc)
+![image](https://github.com/user-attachments/assets/9ee4b06b-d49e-486b-b9ef-4b3571f84db2)
+
+
 
 2. Block browser extension installations
 
