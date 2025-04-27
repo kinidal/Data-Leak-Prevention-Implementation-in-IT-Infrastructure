@@ -132,10 +132,11 @@ For this to successfully validate we need to install the certificate of the fire
 
 1. Disable **Bluetooth file sharing**
 
-> The Aim is to prevent users from sending and receiving files over bluetooth connection from the Organization owned systems. On the other side users should be able to use Bluetooth connected Headphones and other devices.
+The ***Aim** is to prevent users from sending and receiving files over bluetooth connection from the Organization owned systems. On the other side users should be able to use Bluetooth connected Headphones and other devices.
+
 > Create a new GPO with a given name and attach to  a desired OU.
-> Edit the GPO -> Goto Comouter Configuration -> Preferences -> Windows settings -> Registry -> DisableFsquirt -> Set the value 0x1 -> Save
-> Edit the GPO -> Computer Configuration -> Administrative templates -> System/Device Installation/ Device Installation Restrictions -> Prevent Installation of devices that match any of these Device ID's -> BTH\MF_RFCOMM
+> Edit the GPO -> Goto Computer Configuration -> Preferences -> Windows settings -> Registry -> DisableFsquirt -> Set the value 0x1 -> Save
+> Edit the GPO -> Computer Configuration -> Policies -> Administrative templates -> System/Device Installation/ Device Installation Restrictions -> Prevent Installation of devices that match any of these Device ID's -> BTH\MF_RFCOMM
 > Save and apply
 > Apply force sync of Group policy to all systems, also try restart of the endpoint of systems
 > Or run the following command in a command prompt window: fsquirt.exe -UnRegister
@@ -144,19 +145,33 @@ For this to successfully validate we need to install the certificate of the fire
 ![image](https://github.com/user-attachments/assets/9ee4b06b-d49e-486b-b9ef-4b3571f84db2)
 
 
-
 2. Block browser extension installations
 
-> Select the DLP policy
-> Goto
+The Browser extensions can be a significant vulnerability since some extensions can access the systems data and even bypass the security restrictions provided in the network level. We are here concentrating on restriction web browser extensions to Google chrome, Microsoft Edge and firefox since these are only allowed web browsers in the organizations, via GPO.
 
-<<Screenshot here>>
+> For this to achieve we need to download and upload the policy templates respective to that browser.
+Refernce URL :  https://support.google.com/chrome/a/answer/187202?hl=en#zippy=%2Cwindows
+                https://learn.microsoft.com/en-us/deployedge/configure-microsoft-edge
+                https://support.mozilla.org/en-US/kb/customizing-firefox-using-group-policy-windows
 
-3. Disable mobile hotspot sharing
-> In the DLP policy
-> Goto
+> Create new GPO or Edit an existing GPO as preferred. Add to an OU as preferred
+> Edit GPO -> Computer Configuration -> Policies -> Administrative templates -> Microsoft Edge Extension
+> For disabling all extension enable the item Control which extensions cannot be installed with value *
+> For creating exceptions Enable Allow specific extensions to be installed and add the ID of the extension in the list.
 
-<<Screenshot here>>
+![image](https://github.com/user-attachments/assets/0ce92e93-f670-4476-98fd-7655c51d973f)
+
+
+3. Disable **Mobile hotspot sharing**
+
+Laptops has a feature of sharing its Netowrk connected to other Mobile devices acting as a wireless router on its own. To disable this and saves the unwanted network connections to the outisde network and internal network.
+
+> Create new GPO or Edit an existing GPO as preferred. Add to an OU as preferred
+> Edit GPO -> Computer Configuration -> Policies -> Administrative templates -> Network or Network connetions.
+> Enable this policy of 'Prohibit use of Internet Connection sharing on your DNS domain network.
+
+![image](https://github.com/user-attachments/assets/9b493523-9f1f-4e74-b5f5-a36fc0a410fd)
+
 
 ---
 
