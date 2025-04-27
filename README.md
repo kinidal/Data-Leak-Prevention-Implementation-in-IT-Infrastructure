@@ -177,15 +177,41 @@ Laptops has a feature of sharing its Netowrk connected to other Mobile devices a
 
 ## ☁️ Google Workspace DLP Settings
 
-1. Enable protection against phishing attacks
+Since Gmail (Google Workspace) serves as the organization's primary communication platform, our primary concern was to safeguard the integrity of email communications and ensure the confidentiality of data stored in Google Drive. The organization has previously encountered spear-phishing attacks, particularly email spoofing attempts where attackers impersonated the CEO and COO. Given these incidents, it is critical to implement enhanced security measures to protect against such threats.
 
-> Login to Google Workspace Admin
-> Goto
 
+### ✅ Implementatedd Measures
+
+- Multifactor authentication Enroll.
+- Phishing email detection and Email spoofing prevention.
+- Google Drive File sharing restriction.
+- Email Senting Allowlisted domains only.
+
+1. Enable Multifactor Authentication
+- Goto Google Worskpace Admin portal -> Security -> Authentication -> 2-Step Verification -> Set the authentication ON 
+- -> Select the organization in which you want this to enroll
+- You can set the minimum days a user can use the email without 2FA (new users)
+- ON/OFF as desired for Allow  for trusted devices option
+
+![image](https://github.com/user-attachments/assets/c586db75-984c-42db-9d4a-04292f1fd2c8)
 
 
 2. Allow email communication only with approved domains
+- Goto Google workspace Admin portal -> Apps -> Google Workspace -> Settings for Gmail -> Safety
+- Enable 'Protect against domain spoofing based on similar domain names' option.
+- This will protect agains emails coming from domains that looks very similar to legit domains.
+- Also Enable the option 'Protect against domain spoofing based on employee names'.
+- As above this will  stop email with similar employee names in the google workspace.
+- You can choose action like Allow/Block/Quarantine.
+- If you choose quarantine select which quarantine box either default/custom.
+- Select the organization you want to set this as active.
+
+![image](https://github.com/user-attachments/assets/3b198631-cfbe-42d2-9910-3977bfbd1c32)
+
+  
 3. Restrict Drive file sharing to trusted domains
+
+
 
 ---
 
