@@ -1,18 +1,7 @@
 # 🔐 Data Leak Prevention (DLP) Implementation in IT Infrastructure
 
-## 📌 Table of Contents
-- [Overview](#overview)
-- [Firewall-Level Controls (FortiGate)](#firewall-level-controls-fortigate)
-  - [Implementation Steps](#implementation-steps)
-  - [Challenges Faced](#challenges-faced)
-- [Active Directory Configuration](#active-directory-configuration)
-- [Google Workspace DLP Settings](#google-workspace-dlp-settings)
-- [Conclusion](#conclusion)
-- [Screenshots](#screenshots)
 
----
-
-## 📘 Overview
+## 📘 Goal of this Project
 
 This project outlines the implementation of Data Leak Prevention (DLP) within a corporate IT infrastructure using FortiGate Firewall, Active Directory, and Google Workspace. The primary objective is to safeguard confidential data and prevent unauthorized transfers from employees' systems to external destinations.
 
@@ -26,6 +15,18 @@ This project outlines the implementation of Data Leak Prevention (DLP) within a 
 
 This project also supports the organization's compliance with ISO/IEC 27001:2022 and ISO 13485 standards by ensuring data confidentiality and strengthening security posture.
 
+
+## 📌 Table of Contents
+- [Overview](#overview)
+- [Firewall-Level Controls (FortiGate)](#firewall-level-controls-fortigate)
+  - [Implementation Steps](#implementation-steps)
+  - [Challenges Faced](#challenges-faced)
+- [Active Directory Configuration](#active-directory-configuration)
+- [Google Workspace DLP Settings](#google-workspace-dlp-settings)
+- [Conclusion](#conclusion)
+- [Screenshots](#screenshots)
+
+---
 
 
 ## 🔥 Firewall-Level Controls (FortiGate)
@@ -220,10 +221,4 @@ Since Gmail (Google Workspace) serves as the organization's primary communicatio
 ![image](https://github.com/user-attachments/assets/f754ddfb-4a2b-4e10-8d7a-d57ff40fd728)
 
 
----
 
-## ✅ Conclusion
-
-This project leverages existing tools to establish an effective, policy-driven DLP framework while maintaining ISO 27001:2022 and ISO 13485 compliance.
-
----
