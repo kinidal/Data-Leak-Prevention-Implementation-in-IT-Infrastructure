@@ -19,24 +19,23 @@ This project also supports the organization's compliance with ISO/IEC 27001:2022
 ## 📌 Table of Contents
 
 - [Firewall-Level Controls (FortiGate)](#-firewall-level-controls-fortigate)
-  - [Implementation Steps](#implementation-steps)
+  - [Implementation Steps](#implemented-measures)
   - [Challenges Faced](#challenges-faced)
 - [Active Directory Configuration (via GPO)](#-active-directory-configuration-via-gpo)
 - [Google Workspace DLP Settings](#-google-workspace-dlp-settings)
-- [Conclusion](#conclusion)
-- [Screenshots](#screenshots)
+
 
 ---
 
 
 ## 🔥 Firewall-Level Controls (FortiGate)
 
-### ✅ Implementatedd Measures
+### ✅ Implemented Measures
 - Application & Website Restriction using Application Control and Web Filter
 - Blocking login to non-whitelisted Gmail accounts
 - Enabling SSL Deep Inspection for HTTPS traffic
 
-### ✅ Implementation Steps:
+### ✅ Implementation Steps
 1. **Create a Test Policy**
 - A test policy is created in the firewall and placed in the top of list to check the outcome.
 - Create new Appfilter
@@ -88,7 +87,7 @@ This project also supports the organization's compliance with ISO/IEC 27001:2022
 5. **Apply to test systems and monitor**
 
 
-### ❗ Challenges Faced:
+### ❗ Challenges Faced
 
 -- Managing **exceptions** for trusted domains/sites
 
