@@ -36,7 +36,7 @@ This project also supports the organization's compliance with ISO/IEC 27001:2022
 - Enabling SSL Deep Inspection for HTTPS traffic
 
 ### ✅ Implementation Steps
-1. **Create a Test Policy**
+1) **Create a Test Policy**
 - A test policy is created in the firewall and placed in the top of list to check the outcome.
 - Create new Appfilter
 - Create new webfilter
@@ -44,7 +44,7 @@ This project also supports the organization's compliance with ISO/IEC 27001:2022
 - Testing
 
 
-2. **Set Application Filter**
+2) **Set Application Filter**
 - Edit the newly created App Filter
 - Goto Security -> newly created App Filter
 - In Appfilter we can see all the categories with their defualt inspection mode, Monitoring/Block/Allow 
@@ -58,7 +58,7 @@ This project also supports the organization's compliance with ISO/IEC 27001:2022
 ![image](https://github.com/user-attachments/assets/78f7c071-c865-4805-aa2b-925c46aa4b1a)
 
 
-3. **Configure Web Filter**
+3) **Configure Web Filter**
 - Edit the newly created Webfilter.
 - Goto Securiity -> newly created webfilter.
 - Under the Fortiguard Category Based Filter -> Select the categories to block.
@@ -96,10 +96,9 @@ In certain cases, valid domains may be flagged as restricted by the firewall. Th
 - Create new override, paste the domain or URL and select the appropriate  type wildcard/URL etc
 - Select the overriding Categorie as custom category (which we need to create in Locat Categories, and mark that as allowed in the specific webfilter) or any allowed categories already in the webfilter category list of the FOrtiguard category based filter.
 
-<<Screenshot -1 of creating a Webfilter override need to be here>>
+![image](https://github.com/user-attachments/assets/9d0e75a9-0c44-410c-b7bc-c8399b9bdf4e)
 
 ![image](https://github.com/user-attachments/assets/bed787c7-551f-476d-b427-2aef7368cf91)
-
 
 
 - Check the site if the change is performing as expected.
@@ -114,12 +113,12 @@ For this to successfully validate we need to install the certificate of the fire
 - Goto Active directory, create a new GPO 'Firewall certificate installation' and attach to the desired Organization Unit.
 - Edit GPO ->  Goto
 
-<<Screenshot of certificate adding to trusted root is here>>
+![image](https://github.com/user-attachments/assets/8ac4f547-d0f9-481e-b9c4-c316e100fd97)
+
 
 - For Mac Systems, Download the certificate install (make sure it is into system)
 - Go to Keychain editor, make the certificate as trusted always.
 
-<<Screenshot certificate installation of trusted root systems is here>>
 
 ---
 
@@ -194,7 +193,7 @@ Since Gmail (Google Workspace) serves as the organization's primary communicatio
 - We can set the minimum days a user can use the email without 2FA (new users).
 - ON/OFF as desired for Allow  for trusted devices option.
 
-![image](https://github.com/user-attachments/assets/c586db75-984c-42db-9d4a-04292f1fd2c8)
+![image](https://github.com/user-attachments/assets/55bc773b-8562-4ecd-bfbf-017b9e8508bb)
 
 
 2. Allow email communication only with approved domains
