@@ -195,7 +195,7 @@ Since Gmail (Google Workspace) serves as the organization's primary communicatio
 - We can set the minimum days a user can use the email without 2FA (new users).
 - ON/OFF as desired for Allow  for trusted devices option.
 
-![image](https://github.com/user-attachments/assets/c586db75-984c-42db-9d4a-04292f1fd2c8)
+![image](https://github.com/user-attachments/assets/07a3f7e5-9a40-40b7-b758-d319785acc9f)
 
 
 2. Allow email communication only with approved domains
