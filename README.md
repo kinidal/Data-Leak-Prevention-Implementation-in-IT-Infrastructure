@@ -68,7 +68,7 @@ This project also supports the organization's compliance with ISO/IEC 27001:2022
 ![image](https://github.com/user-attachments/assets/eb4f6539-8faa-4c9e-9867-23242e8e9aba)
 
 
-4. **Restrict Gmail Logins (non-whitelisted domains)**
+4) **Restrict Gmail Logins (non-whitelisted domains)**
 - Goto newly created Webfilter.
 - Make sure it is 'Proxy-based' mode.
 - Scroll down to the option Proxy options -> Restrict  Google account usage to specific domains -> Toggle it ON
@@ -84,7 +84,7 @@ This project also supports the organization's compliance with ISO/IEC 27001:2022
 ![image](https://github.com/user-attachments/assets/c2c7a883-42e6-40c0-ba6c-c70ea94d938c)
 
 
-5. **Apply to test systems and monitor**
+5) **Apply to test systems and monitor**
 
 
 ### ❗ Challenges Faced
