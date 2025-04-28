@@ -1,7 +1,7 @@
 # 🔐 Data Leak Prevention (DLP) Implementation in IT Infrastructure
 
 
-## 📘 Goal of this Project
+## 📘 Goal of this Project - Testing
 
 This project outlines the implementation of Data Leak Prevention (DLP) within a corporate IT infrastructure using FortiGate Firewall, Active Directory, and Google Workspace. The primary objective is to safeguard confidential data and prevent unauthorized transfers from employees' systems to external destinations.
 
