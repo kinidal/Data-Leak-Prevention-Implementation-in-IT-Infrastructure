@@ -36,7 +36,7 @@ This project also supports the organization's compliance with ISO/IEC 27001:2022
 - Enabling SSL Deep Inspection for HTTPS traffic
 
 ### ✅ Implementation Steps
-1. **Create a Test Policy**
+1) **Create a Test Policy**
 - A test policy is created in the firewall and placed in the top of list to check the outcome.
 - Create new Appfilter
 - Create new webfilter
@@ -44,7 +44,7 @@ This project also supports the organization's compliance with ISO/IEC 27001:2022
 - Testing
 
 
-2. **Set Application Filter**
+2) **Set Application Filter**
 - Edit the newly created App Filter
 - Goto Security -> newly created App Filter
 - In Appfilter we can see all the categories with their defualt inspection mode, Monitoring/Block/Allow 
@@ -58,7 +58,7 @@ This project also supports the organization's compliance with ISO/IEC 27001:2022
 ![image](https://github.com/user-attachments/assets/78f7c071-c865-4805-aa2b-925c46aa4b1a)
 
 
-3. **Configure Web Filter**
+ 3) **Configure Web Filter**
 - Edit the newly created Webfilter.
 - Goto Securiity -> newly created webfilter.
 - Under the Fortiguard Category Based Filter -> Select the categories to block.
@@ -68,7 +68,7 @@ This project also supports the organization's compliance with ISO/IEC 27001:2022
 ![image](https://github.com/user-attachments/assets/eb4f6539-8faa-4c9e-9867-23242e8e9aba)
 
 
-4. **Restrict Gmail Logins (non-whitelisted domains)**
+4) **Restrict Gmail Logins (non-whitelisted domains)**
 - Goto newly created Webfilter.
 - Make sure it is 'Proxy-based' mode.
 - Scroll down to the option Proxy options -> Restrict  Google account usage to specific domains -> Toggle it ON
@@ -84,7 +84,7 @@ This project also supports the organization's compliance with ISO/IEC 27001:2022
 ![image](https://github.com/user-attachments/assets/c2c7a883-42e6-40c0-ba6c-c70ea94d938c)
 
 
-5. **Apply to test systems and monitor**
+5) **Apply to test systems and monitor**
 
 
 ### ❗ Challenges Faced
