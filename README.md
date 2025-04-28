@@ -96,7 +96,8 @@ In certain cases, valid domains may be flagged as restricted by the firewall. Th
 - Create new override, paste the domain or URL and select the appropriate  type wildcard/URL etc
 - Select the overriding Categorie as custom category (which we need to create in Locat Categories, and mark that as allowed in the specific webfilter) or any allowed categories already in the webfilter category list of the FOrtiguard category based filter.
 
-<<Screenshot -1 of creating a Webfilter override need to be here>>
+![image](https://github.com/user-attachments/assets/59e58899-c1e5-4c6b-938c-76addd67a5ed)
+
 
 ![image](https://github.com/user-attachments/assets/bed787c7-551f-476d-b427-2aef7368cf91)
 
@@ -119,7 +120,7 @@ For this to successfully validate we need to install the certificate of the fire
 - For Mac Systems, Download the certificate install (make sure it is into system)
 - Go to Keychain editor, make the certificate as trusted always.
 
-<<Screenshot certificate installation of trusted root systems is here>>
+![image](https://github.com/user-attachments/assets/63ebd131-b8a3-45c1-a864-9fae7a525857)
 
 ---
 
