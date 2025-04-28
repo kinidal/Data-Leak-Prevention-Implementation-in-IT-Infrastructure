@@ -36,7 +36,7 @@ This project also supports the organization's compliance with ISO/IEC 27001:2022
 - Enabling SSL Deep Inspection for HTTPS traffic
 
 ### ✅ Implementation Steps
-1) **Create a Test Policy**
+### **Create a Test Policy**
 - A test policy is created in the firewall and placed in the top of list to check the outcome.
 - Create new Appfilter
 - Create new webfilter
@@ -44,7 +44,7 @@ This project also supports the organization's compliance with ISO/IEC 27001:2022
 - Testing
 
 
-2) **Set Application Filter**
+### **Set Application Filter**
 - Edit the newly created App Filter
 - Goto Security -> newly created App Filter
 - In Appfilter we can see all the categories with their defualt inspection mode, Monitoring/Block/Allow 
@@ -58,7 +58,7 @@ This project also supports the organization's compliance with ISO/IEC 27001:2022
 ![image](https://github.com/user-attachments/assets/78f7c071-c865-4805-aa2b-925c46aa4b1a)
 
 
-3) **Configure Web Filter**
+### **Configure Web Filter**
 - Edit the newly created Webfilter.
 - Goto Securiity -> newly created webfilter.
 - Under the Fortiguard Category Based Filter -> Select the categories to block.
@@ -68,7 +68,7 @@ This project also supports the organization's compliance with ISO/IEC 27001:2022
 ![image](https://github.com/user-attachments/assets/eb4f6539-8faa-4c9e-9867-23242e8e9aba)
 
 
-4) **Restrict Gmail Logins (non-whitelisted domains)**
+### **Restrict Gmail Logins (non-whitelisted domains)**
 - Goto newly created Webfilter.
 - Make sure it is 'Proxy-based' mode.
 - Scroll down to the option Proxy options -> Restrict  Google account usage to specific domains -> Toggle it ON
@@ -84,12 +84,10 @@ This project also supports the organization's compliance with ISO/IEC 27001:2022
 ![image](https://github.com/user-attachments/assets/c2c7a883-42e6-40c0-ba6c-c70ea94d938c)
 
 
-5) **Apply to test systems and monitor**
-
 
 ### ❗ Challenges Faced
 
--- Managing **exceptions** for trusted domains/sites
+### -- Managing **exceptions** for trusted domains/sites
 
 In certain cases, valid domains may be flagged as restricted by the firewall. This behavior may result from the domains being newly registered or classified under potentially high-risk categories according to FortiGate threat intelligence signatures, or due to administrator-defined policies. To resolve such instances, web filter override rules can be configured to permit access based on organizational requirements.
 - Goto Webfilter override
@@ -103,7 +101,7 @@ In certain cases, valid domains may be flagged as restricted by the firewall. Th
 
 - Check the site if the change is performing as expected.
 
--- Need for **SSL inspection certificate** installation across endpoints
+### -- Need for **SSL inspection certificate** installation across endpoints
 
 When the SSL Deep inspection is enabled in a Firewall policy it is more likely that the sites or any URL based connections will undergo strict checking for SSL certificates availability and validity. We may also encounter error from even valid sites because the first certificate validation (symmetric encryption) is happen in from the firewall and the end user system. 
 
@@ -130,7 +128,7 @@ For this to successfully validate we need to install the certificate of the fire
 - Restrict browser extension installations.
 - Block mobile hotspot sharing features on laptops.
 
-1. Disable **Bluetooth file sharing**
+### Disable **Bluetooth file sharing**
 
 The ***Aim** is to prevent users from sending and receiving files over bluetooth connection from the Organization owned systems. On the other side users should be able to use Bluetooth connected Headphones and other devices.
 
@@ -145,7 +143,7 @@ The ***Aim** is to prevent users from sending and receiving files over bluetooth
 ![image](https://github.com/user-attachments/assets/9ee4b06b-d49e-486b-b9ef-4b3571f84db2)
 
 
-2. Block browser extension installations
+### Block **Browser extension** installations
 
 The Browser extensions can be a significant vulnerability since some extensions can access the systems data and even bypass the security restrictions provided in the network level. We are here concentrating on restriction web browser extensions to Google chrome, Microsoft Edge and firefox since these are only allowed web browsers in the organizations, via GPO.
 
@@ -162,7 +160,7 @@ Refernce URL :  https://support.google.com/chrome/a/answer/187202?hl=en#zippy=%2
 ![image](https://github.com/user-attachments/assets/0ce92e93-f670-4476-98fd-7655c51d973f)
 
 
-3. Disable **Mobile hotspot sharing**
+### Disable **Mobile hotspot sharing**
 
 Laptops has a feature of sharing its Netowrk connected to other Mobile devices acting as a wireless router on its own. To disable this and saves the unwanted network connections to the outisde network and internal network.
 
@@ -187,7 +185,7 @@ Since Gmail (Google Workspace) serves as the organization's primary communicatio
 - Google Drive File sharing restriction.
 - Email Senting Allowlisted domains only.
 
-1. Enable Multifactor Authentication
+## Enable **Multifactor Authentication**
 - Goto Google Worskpace Admin portal -> Security -> Authentication -> 2-Step Verification -> Set the authentication ON. 
 - Select the organization in which we want this to enroll..
 - We can set the minimum days a user can use the email without 2FA (new users).
@@ -196,7 +194,7 @@ Since Gmail (Google Workspace) serves as the organization's primary communicatio
 ![image](https://github.com/user-attachments/assets/55bc773b-8562-4ecd-bfbf-017b9e8508bb)
 
 
-2. Allow email communication only with approved domains
+## Allow **Email communication** only with approved domains
 - Goto Google workspace Admin portal -> Apps -> Google Workspace -> Settings for Gmail -> Safety
 - Enable 'Protect against domain spoofing based on similar domain names' option.
 - This will protect against emails coming from domains that looks very similar to legit domains.
@@ -209,7 +207,7 @@ Since Gmail (Google Workspace) serves as the organization's primary communicatio
 ![image](https://github.com/user-attachments/assets/3b198631-cfbe-42d2-9910-3977bfbd1c32)
 
   
-3. Restrict Drive file sharing to trusted domains
+## Restrict **Drive file sharing** to trusted domains
 - Goto Google workspace Admin portal -> Apps -> Google Workspace -> Settings for Drive and Docs -> Sharing settings
 - We can either turn OFF/ON the file sharing to every domains or select to sent emails to specific domain only. 
 - Select 'Allowlisted domain' -> We should have predefind lists of domains which are whitelistes so the employess can send emails to -> Or we can create it from here.
