@@ -91,7 +91,7 @@ This project also supports the organization's compliance with ISO/IEC 27001:2022
 
 -- Managing **exceptions** for trusted domains/sites
 
-**Sometime** there are some scenarios are expected like even valid domains are found as restricted domains via firewall due to the fact that they may be newly created domains or these domains are categorized are potentially dangerous categories as per fortigate signatures (or admins set up like that). For overriding this we can create webfilter overrides and 
+In certain cases, valid domains may be flagged as restricted by the firewall. This behavior may result from the domains being newly registered or classified under potentially high-risk categories according to FortiGate threat intelligence signatures, or due to administrator-defined policies. To resolve such instances, web filter override rules can be configured to permit access based on organizational requirements.
 - Goto Webfilter override
 - Create new override, paste the domain or URL and select the appropriate  type wildcard/URL etc
 - Select the overriding Categorie as custom category (which we need to create in Locat Categories, and mark that as allowed in the specific webfilter) or any allowed categories already in the webfilter category list of the FOrtiguard category based filter.
